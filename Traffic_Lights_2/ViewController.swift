@@ -14,6 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet var greenLightView: UIView!
     @IBOutlet var buttonStart: UIButton!
     
+    override func viewDidAppear(_ animated: Bool)  {
+        redLightView.layer.cornerRadius = redLightView.frame.width / 2
+        yellowLightView.layer.cornerRadius = yellowLightView.frame.width / 2
+        greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
+        
+       
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,13 +29,7 @@ class ViewController: UIViewController {
        
     }
     
-    override func viewDidAppear(_ animated: Bool)  {
-        redLightView.layer.cornerRadius = redLightView.frame.width / 2
-        yellowLightView.layer.cornerRadius = yellowLightView.frame.height / 2
-        greenLightView.layer.cornerRadius = greenLightView.frame.width / 2
-        
-        buttonStart.setTitle("\(redLightView.frame.size.width)", for: .normal)
-    }
+   
 
     @IBAction func buttonStartPressed() {
         buttonStart.setTitle("NEXT", for: .normal)
